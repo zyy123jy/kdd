@@ -16,6 +16,6 @@ After the data is downloaded, please construct a structure "dat" includes:
        hip: [8718x1 double]
      brain: [8718x1 double]
        edu: [8718x1 double]
-The, we can convert the "dat" to our format using: convert_data.m.
+The, we can convert the "dat" to our format using: convert_data.m. write_data.m
 Please note that in our model, Y1 represent MMSE, Y2 represent ADAS-COG, Y3 represent ventricle volume and Y4 represent hippocampus volume, Y5 present CDRSB.
 
