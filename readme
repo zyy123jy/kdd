@@ -1,0 +1,21 @@
+Please install following packages to run our code: 
+tensorflow: https://www.tensorflow.org/
+Edward: http://edwardlib.org/
+We can not distribute the data due to the restriction of ADNI http://adni-info.org/, however, one can register and download the data from: https://tadpole.grand-challenge.org/data/
+After the data is downloaded, please construct a structure "dat" includes:
+      age: [8718x1 double]
+      APOE: [8718x1 double]
+      date: {8718x1 cell}
+     gender: {8718x1 cell}
+     label: {8718x1 cell}
+        id: [8718x1 double]
+      MMSE: [8718x1 double]
+      ADAS: [8718x1 double]
+      cdrs: [8718x1 double]
+       ven: [8718x1 double]
+       hip: [8718x1 double]
+     brain: [8718x1 double]
+       edu: [8718x1 double]
+The, we can convert the "dat" to our format using: convert_data.m.
+Please note that in our model, Y1 represent MMSE, Y2 represent ADAS-COG, Y3 represent ventricle volume and Y4 represent hippocampus volume, Y5 present CDRSB.
+
