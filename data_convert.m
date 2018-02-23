@@ -14,19 +14,6 @@ i = 2;
     Y(3,t,index) = dat.ven(i)/dat.brain(i);
     Y(4,t,index) = dat.hip(i)/dat.brain(i);
     Y(5,t,index) = dat.cdrs(i);
-    
-    if length(dat.av45{i})>0
-    Y(6,t,index) = str2double( dat.av45{i});
-    end
-    if length(dat.fdg{i})>0
-    Y(7,t,index) = str2double( dat.fdg{i});
-    end
-    if length(dat.pib{i})>0
-    Y(8,t,index) = str2double( dat.pib{i});
-    end
-    Y(9,t,index) = dat.ptau(i);
-    Y(10,t,index) = dat.abeta(i);
-       
     label{index,t} = dat.label{i};
     change(index) = dat.change(i);
   
@@ -62,18 +49,6 @@ for i = 3:length(dat.date)
     Y(3,t,index) = dat.ven(i)/dat.brain(i);
     Y(4,t,index) = dat.hip(i)/dat.brain(i);
     Y(5,t,index) = dat.cdrs(i);
-    
-    if length(dat.av45{i})>0
-    Y(6,t,index) = str2double( dat.av45{i});
-    end
-    if length(dat.fdg{i})>0
-    Y(7,t,index) = str2double( dat.fdg{i});
-    end
-    if length(dat.pib{i})>0
-    Y(8,t,index) = str2double( dat.pib{i});
-    end
-    Y(9,t,index) = dat.ptau(i);
-    Y(10,t,index) = dat.abeta(i);   
     label{index,t} = dat.label{i};
     change(index) = dat.change(i);
     
@@ -90,22 +65,9 @@ for i = 3:length(dat.date)
     Y(3,t,index) = dat.ven(i)/dat.brain(i);
     Y(4,t,index) = dat.hip(i)/dat.brain(i);
     Y(5,t,index) = dat.cdrs(i);
-    
-    if length(dat.av45{i})>0
-    Y(6,t,index) = str2double( dat.av45{i});
-    end
-    if length(dat.fdg{i})>0
-    Y(7,t,index) = str2double( dat.fdg{i});
-    end
-    if length(dat.pib{i})>0
-    Y(8,t,index) = str2double( dat.pib{i});
-    end
-  
-    Y(9,t,index) = dat.ptau(i);
-    Y(10,t,index) = dat.abeta(i);
     label{index,t} = dat.label{i};
     change(index) = dat.change(i);
-     X(index,1) = dat.APOE(i);
+      X(index,1) = dat.APOE(i);
     if length(dat.gender{i}) == 4
       X(index,2) = 1;
     else
