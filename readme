@@ -1,16 +1,30 @@
-Please install following packages to run our code: 
-tensorflow: https://www.tensorflow.org/
-Edward: http://edwardlib.org/
-We can not distribute the data due to the restriction of ADNI http://adni-info.org/, however, one can register and download the data from: https://tadpole.grand-challenge.org/data/
-After the data is downloaded, please use the file: read_data to convert the data to our format. You can convert the data to our format and run the code the train your own model.
 
-Please note that in our model, Y1 represent MMSE (0-30), Y2 represent ADAS-COG(0-70), Y3 represent normalized ventricle volume 
-and Y4 represent normalized hippocampus volume, Y5 present CDRSB(0-17). X include APOE4, gender, education, normalized  ventricle volumne and hippocampus volumne
-caculated from MR images.
+A toolbox for predicting clinical outcome of Alzheimer’s Diseases.
+It will generally run with Edward on top of tensorflow. 
 
-train_model.py is the file used to train the model. test_mode.py is the file to test the model. 
-Run the test-run.ipynb in juypter notebook to train and test the model.
+Main tools
 
-We provided a trained model is provided here. The subjects id used to train this model is listed in idx.txt. 
+Train_model: Load the training dataset, train the prediction model and save the model.
+Test_model: Load the testing dataset, run the trained model on different testing subjects and save the results.
+Idx: The subject ID we used from https://tadpole.grand-challenge.org/data/
+Read_data: Read the raw dataset and convert to our input files.
+test-run.ipynb: The juypter notebook file to run the train_model.py and test_model.py.
+Y1: MMSE (0-30)
+Y2: ADAS-COG(0-70)
+Y3: normalized ventricle volume 
+Y4: normalized hippocampus volume
+Y5: CDRSB(0-17). 
+X:  APOE4, gender, education, normalized ventricle volume and hippocampus volume at baseline visit
 
-Any questions please contact yz2377@cornell.edu.
+Requirements:
+•	Tensorflow, Edward and all of their requirements (e.g. hyp5). Please install following packages to run our code: tensorflow: https://www.tensorflow.org Edward: http://edwardlib.org/
+•	numpy, scipy, tqdm
+Development:
+Please contact yingying zhu, yz2377@cornell.edu for question related.
+
+Papers:
+If you use this code, please cite one of the following:
+Yingying Zhu, Mert R. Sabuncu,
+A Probabilistic Disease Progression Model for Predicting Future Clinical Outcome,
+Medical Image Computing and Computer-Assisted Intervention (MICCAI) workshop, 2018.
+
