@@ -17,7 +17,7 @@ def train_model():
     mmse_scale = 20
     adas_scale = 50
     cdr_scale = 10
-    time_scale = 15
+    time_scale = 30
     base_year = 60
     X_data = pd.read_csv('./X.txt', sep="\t", header = None)
     Y1 = pd.read_csv('./Y1.txt', sep="\t", header = None)
