@@ -45,7 +45,7 @@ def train_model():
 
     Y5 = np.array(Y5)/cdr_scale
     where_are_NaNs = np.isnan(Y5)
-    Y5[where_are_NaNs] = 0
+    Y5[where_are_NaNs] = -1
 
     n0 = np.size(T_data,0)
     m0 = np.size(T_data,1)
@@ -118,11 +118,11 @@ def train_model():
         Mask_test = np.zeros((Md-2,Ne,Mt))
         Mask_test[0,:,:] = (Y_test1>0)*1
         Mask_test[1,:,:] = (Y_test2>0)*1
-        Mask_test[2,:,:] = ((Y_test5-Y_test5)==0)*1      
+        Mask_test[2,:,:] = ((Y_test5>-1)*1      
         Mask_val = np.zeros((Md-2,Ne,Mt))
         Mask_val[0,:,:] = (Y_val1>0)*1
         Mask_val[1,:,:] = (Y_val2>0)*1
-        Mask_val[2,:,:] = ((Y_val5-Y_val5)==0)*1  
+        Mask_val[2,:,:] = ((Y_val5>-1)*1  
         for i_val in range(0,10): 
             X = tf.placeholder(tf.float32, [N,D])
             T = tf.placeholder(tf.float32, [N,M])
