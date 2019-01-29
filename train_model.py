@@ -66,14 +66,14 @@ def train_model():
     E2 = np.zeros([30,5])
     E5 = np.zeros([30,5])
     
-    for iter in range(0,1):
+    for iter in range(0,20):
          # validation 
            
         index = np.arange(0,n0)
         print(index)
         #index = np.delete(index,idx)
         index_test = index[(iter)*145:(iter+1)*145]  
-        index_val = index[(iter+1)*145:(iter+2)*145]  
+        index_val = index[(iter+2)*145:(iter+3)*145]  
         index_train = index
         index_train = np.delete(index_train, index_test)
       
@@ -123,7 +123,7 @@ def train_model():
         Mask_val[0,:,:] = (Y_val1>0)*1
         Mask_val[1,:,:] = (Y_val2>0)*1
         Mask_val[2,:,:] = ((Y_val5-Y_val5)==0)*1  
-        for i_val in range(0,1): 
+        for i_val in range(0,10): 
             X = tf.placeholder(tf.float32, [N,D])
             T = tf.placeholder(tf.float32, [N,M])
             Mask = tf.placeholder(tf.float32, [Md,N,M])
@@ -235,10 +235,10 @@ def train_model():
             np.savetxt( "sigma_s0.txt", sigma_s0.eval(), delimiter=",")
             np.savetxt( "sigma_q0.txt", sigma_q0.eval(), delimiter=",")
             np.savetxt( "sigma_y0.txt", sigma_y0.eval(), delimiter=",")
-            np.savetxt( "Y1_test.txt", Y_test1*20, delimiter=",")
-            np.savetxt( "Y2_test.txt", Y_test2*50, delimiter=",")
-            np.savetxt( "Y5_test.txt", Y_test5*10, delimiter=",")
+            np.savetxt( "Y1_test.txt", Y_test1*mmse_scale, delimiter=",")
+            np.savetxt( "Y2_test.txt", Y_test2*adas_scale, delimiter=",")
+            np.savetxt( "Y5_test.txt", Y_test5*cdr_scale, delimiter=",")
             np.savetxt( "X_test.txt", X_test, delimiter=",")
             np.savetxt( "X_data.txt", X_data, delimiter=",")
-            np.savetxt( "T_test.txt", T_test*20+60, delimiter=",")
+            np.savetxt( "T_test.txt", T_test*time_scale+base_age, delimiter=",")
     # testing using MAP to estimate s and q
