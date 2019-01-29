@@ -73,7 +73,7 @@ def train_model():
         print(index)
         #index = np.delete(index,idx)
         index_test = index[(iter)*145:(iter+1)*145]  
-        index_val = index[(iter+2)*145:(iter+3)*145]  
+        index_val = index[(iter+1)*145:(iter+2)*145]  
         index_train = index
         index_train = np.delete(index_train, index_test)
       
